@@ -7,7 +7,7 @@ import pinterestIcon from "../../assets/images/Pinterest.svg";
 export default function Footer() {
   return (
     <footer className="footer">
-      <h2 className="footer__wordmark">Snaps</h2>
+      <h2 className="wordmark footer__wordmark">Snaps</h2>
 
       <ul className="footer__nav">
         <li className="footer__nav-element">
