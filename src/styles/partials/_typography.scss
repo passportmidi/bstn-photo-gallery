@@ -1,0 +1,55 @@
+@use "./mixins" as *;
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("../../assets/fonts/Newsreader-Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("../../assets/fonts/Newsreader-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("../../assets/fonts/Newsreader-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../../assets/fonts/Outfit-Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../../assets/fonts/Outfit-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+.wordmark {
+  font-family: "Newsreader", Times, serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  @include desktop-tablet {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.label {
+  font-family: "Outfit", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+
+  @include desktop-tablet {
+    font-size: 14px;
+    line-height: 17.5px;
+  }
+}
