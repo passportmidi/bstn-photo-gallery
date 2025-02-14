@@ -7,7 +7,7 @@ export default function Description() {
       <p className="desc__body">
         Provide photographers a space to share photos of the neighborhoods they
         cherish,
-        <span class="desc__body--italic">
+        <span className="desc__body--italic">
           {" "}
           expressed in their unique style.
         </span>
