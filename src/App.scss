@@ -2,14 +2,19 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/typography" as *;
 
+body {
+  color: $black;
+  background-color: $pistachio;
+}
+
 * {
   margin: 0;
   padding: 0;
-  color: $black;
 }
 
 a {
   text-decoration: none;
+  color: $black;
 }
 
 ul {
