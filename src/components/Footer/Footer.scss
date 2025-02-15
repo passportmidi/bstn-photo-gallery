@@ -15,6 +15,7 @@
     &--bottom {
       @include display(flex, space-between, baseline, row);
       width: 100%;
+      color: #b7cec9;
     }
   }
   &__icon-area {
@@ -29,8 +30,4 @@
       width: 300px;
     }
   }
-}
-
-.label {
-  color: #b7cec9;
 }

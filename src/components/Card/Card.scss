@@ -1,0 +1,47 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.card {
+  margin: 16px;
+  border-radius: 8px;
+  border: 1px solid $seagreen;
+  background-color: $sage;
+  &__content {
+    position: relative;
+    display: flex;
+  }
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  &__photographer {
+    position: absolute;
+    background-color: $sage;
+    border-top-left-radius: 8px;
+    right: 0;
+    bottom: 0;
+  }
+  &__photographer,
+  &__tags {
+    padding: 8px;
+  }
+  &__tags {
+    border-top: 1px solid $seagreen;
+  }
+}
+
+@include desktop-tablet {
+  .card {
+    border-radius: 12px;
+    &__image {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    &__photographer,
+    &__tags {
+      padding: 16px;
+    }
+  }
+}
