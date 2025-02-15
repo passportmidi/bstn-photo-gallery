@@ -3,6 +3,16 @@
 .footer {
   background-color: $pistachio;
   padding: 16px;
+  &__wordmark {
+    padding-bottom: 40px;
+  }
+  &__nav {
+    padding-bottom: 16px;
+  }
+  &__nav-element {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
 }
 
 .label {
