@@ -56,17 +56,17 @@ export default function Footer() {
         <p className="footer__copyright">© 2024 Snaps</p>
         <ul className="footer__nav--bottom">
           <li className="footer__nav-element--bottom">
-            <a className="footer__nav-link--bottom" href="/">
+            <a className="footer__nav-link--bottom body-copy" href="/">
               . Terms
             </a>
           </li>
           <li className="footer__nav-element--bottom">
-            <a className="footer__nav-link--bottom" href="/">
+            <a className="footer__nav-link--bottom body-copy" href="/">
               Privacy
             </a>
           </li>
           <li className="footer__nav-element--bottom">
-            <a className="footer__nav-link--bottom" href="/">
+            <a className="footer__nav-link--bottom body-copy" href="/">
               Cookies
             </a>
           </li>
