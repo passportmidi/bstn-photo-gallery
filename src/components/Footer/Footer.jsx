@@ -11,17 +11,17 @@ export default function Footer() {
 
       <ul className="footer__nav">
         <li className="footer__nav-element">
-          <a className="footer__nav-link" href="/">
+          <a className="footer__nav-link body-copy" href="/">
             For photographers
           </a>
         </li>
         <li className="footer__nav-element">
-          <a className="footer__nav-link" href="/">
+          <a className="footer__nav-link body-copy" href="/">
             Hire talent
           </a>
         </li>
         <li className="footer__nav-element">
-          <a className="footer__nav-link" href="/">
+          <a className="footer__nav-link body-copy" href="/">
             Inspiration
           </a>
         </li>
@@ -29,17 +29,17 @@ export default function Footer() {
 
       <ul className="footer__nav">
         <li className="footer__nav-element">
-          <a className="footer__nav-link" href="/">
+          <a className="footer__nav-link body-copy" href="/">
             About
           </a>
         </li>
         <li className="footer__nav-element">
-          <a className="footer__nav-link" href="/">
+          <a className="footer__nav-link body-copy" href="/">
             Careers
           </a>
         </li>
         <li className="footer__nav-element">
-          <a className="footer__nav-link" href="/">
+          <a className="footer__nav-link body-copy" href="/">
             Support
           </a>
         </li>
@@ -53,20 +53,20 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <p className="footer__copyright">© 2024 Snaps</p>
+        <p className="footer__copyright label">© 2024 Snaps</p>
         <ul className="footer__nav--bottom">
           <li className="footer__nav-element--bottom">
-            <a className="footer__nav-link--bottom body-copy" href="/">
+            <a className="footer__nav-link--bottom label" href="/">
               . Terms
             </a>
           </li>
           <li className="footer__nav-element--bottom">
-            <a className="footer__nav-link--bottom body-copy" href="/">
+            <a className="footer__nav-link--bottom label" href="/">
               Privacy
             </a>
           </li>
           <li className="footer__nav-element--bottom">
-            <a className="footer__nav-link--bottom body-copy" href="/">
+            <a className="footer__nav-link--bottom label" href="/">
               Cookies
             </a>
           </li>
