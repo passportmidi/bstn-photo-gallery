@@ -53,8 +53,10 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <p className="footer__copyright label">© 2024 Snaps</p>
         <ul className="footer__nav--bottom">
+          <li className="footer__nav-element--bottom">
+            <p className="footer__copyright label">© 2024 Snaps</p>
+          </li>
           <li className="footer__nav-element--bottom">
             <a className="footer__nav-link--bottom label" href="/">
               . Terms

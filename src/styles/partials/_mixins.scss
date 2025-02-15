@@ -1,3 +1,10 @@
+@mixin display($display, $justify, $align, $direction) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
 @mixin desktop {
   @media (min-width: 1280px) {
     @content;
