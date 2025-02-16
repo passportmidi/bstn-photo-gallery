@@ -1,5 +1,6 @@
 import "./Card.scss";
 import placeholderImage from "../../assets/images/Photo-00.png";
+import Tag from "../Tag/Tag";
 
 function Card() {
   return (
@@ -8,8 +9,8 @@ function Card() {
         <img className="card__image" src={placeholderImage} alt="placeholder" />
         <div className="card__photographer label">Yaaaay</div>
       </div>
-      <div className="card__tags label">
-        <p>Placeholder</p>
+      <div className="card__tags">
+        <Tag />
       </div>
     </div>
   );
