@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <Header iconFill="#1E6655" />
+      <Header />
       <Description />
       {cardsList}
       <Footer />
