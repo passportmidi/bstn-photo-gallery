@@ -1,6 +1,21 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
 
 .header {
+  @include display(flex, space-between, center, row);
   background-color: $pistachio;
   padding: 24px 16px;
+  &__cta {
+    @include display(flex, center, center, row);
+    gap: 8px;
+    padding: 8px 16px;
+    color: $forestgreen;
+    background-color: $pistachio;
+    border: 2px solid $forestgreen;
+    border-radius: 17.5px;
+    @include desktop-tablet {
+      padding: 11px 22px;
+      border-radius: 21.75px;
+    }
+  }
 }

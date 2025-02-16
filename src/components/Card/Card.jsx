@@ -2,7 +2,7 @@ import "./Card.scss";
 import Tag from "../Tag/Tag";
 
 function Card({ photo }) {
-  const tagList = photo.tags.map((tag) => <Tag value={tag} />);
+  const tagList = photo.tags.map((tag) => <Tag value={tag} key={tag} />);
   return (
     <div className="card">
       <div className="card__content">
