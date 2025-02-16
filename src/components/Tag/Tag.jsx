@@ -1,7 +1,7 @@
 import "./Tag.scss";
 
-function Tag() {
-  return <button className="tag label">Placeholder</button>;
+function Tag({ value }) {
+  return <button className="tag label">{value}</button>;
 }
 
 export default Tag;

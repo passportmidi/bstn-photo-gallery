@@ -2,6 +2,7 @@ import "./Card.scss";
 import Tag from "../Tag/Tag";
 
 function Card({ photo }) {
+  const tagList = photo.tags.map((tag) => <Tag value={tag} />);
   return (
     <div className="card">
       <div className="card__content">
@@ -12,10 +13,7 @@ function Card({ photo }) {
         />
         <div className="card__photographer label">{photo.photographer}</div>
       </div>
-      <div className="card__tags">
-        <Tag />
-        <Tag />
-      </div>
+      <div className="card__tags">{tagList}</div>
     </div>
   );
 }
