@@ -11,6 +11,7 @@ function Card() {
       </div>
       <div className="card__tags">
         <Tag />
+        <Tag />
       </div>
     </div>
   );

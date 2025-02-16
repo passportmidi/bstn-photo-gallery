@@ -3,7 +3,7 @@
 
 .footer {
   background-color: $pistachio;
-  padding: 16px;
+  padding: 48px 16px 16px 16px;
   &__wordmark {
     padding-bottom: 40px;
   }
@@ -15,7 +15,9 @@
     &--bottom {
       @include display(flex, space-between, baseline, row);
       width: 100%;
-      color: #b7cec9;
+      & .label {
+        color: #b7cec9;
+      }
     }
   }
   &__icon-area {

@@ -1,0 +1,14 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.tag {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid $seagreen;
+  background-color: white;
+
+  @include desktop-tablet {
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+}

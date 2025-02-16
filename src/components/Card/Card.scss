@@ -29,6 +29,8 @@
   }
   &__tags {
     border-top: 1px solid $seagreen;
+    display: flex;
+    gap: 8px;
   }
 }
 

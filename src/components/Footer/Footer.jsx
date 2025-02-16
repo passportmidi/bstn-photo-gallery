@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="footer">
       <h2 className="wordmark footer__wordmark">Snaps</h2>
 
-      <ul className="footer__nav">
+      <ul className="footer__nav footer__nav--first">
         <li className="footer__nav-element">
           <a className="footer__nav-link body-copy" href="/">
             For photographers
@@ -27,7 +27,7 @@ export default function Footer() {
         </li>
       </ul>
 
-      <ul className="footer__nav">
+      <ul className="footer__nav footer__nav--second">
         <li className="footer__nav-element">
           <a className="footer__nav-link body-copy" href="/">
             About
