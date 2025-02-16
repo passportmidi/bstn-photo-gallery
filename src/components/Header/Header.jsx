@@ -9,7 +9,7 @@ export default function Header() {
     <header className="header">
       <h2 className="wordmark header__wordmark">Snaps</h2>
       <button
-        className="header__cta label"
+        className={`header__cta${hover ? " header__cta--hover" : ""} label`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >

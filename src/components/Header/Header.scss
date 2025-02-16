@@ -17,5 +17,9 @@
       padding: 11px 22px;
       border-radius: 21.75px;
     }
+    &--hover {
+      background-color: $forestgreen;
+      color: white;
+    }
   }
 }
