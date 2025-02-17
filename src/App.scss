@@ -5,6 +5,10 @@
 body {
   color: $black;
   background-color: $pistachio;
+  margin: 0 16px;
+  @include desktop-tablet {
+    margin: 0 32px;
+  }
 }
 
 * {
@@ -24,13 +28,13 @@ ul {
 
 .app {
   &__cards {
-    margin: 16px;
     display: flex;
     flex-direction: column;
+    gap: 16px;
     @include desktop-tablet {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      grid-gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-gap: 32px;
     }
   }
 }

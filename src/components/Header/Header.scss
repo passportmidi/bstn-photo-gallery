@@ -4,7 +4,7 @@
 .header {
   @include display(flex, space-between, center, row);
   background-color: $pistachio;
-  padding: 24px 16px;
+  padding: 24px 0;
   &__cta {
     @include display(flex, center, center, row);
     gap: 8px;
