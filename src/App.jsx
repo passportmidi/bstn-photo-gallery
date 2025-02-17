@@ -8,15 +8,22 @@ import photos from "./data/photos.json";
 import "./App.scss";
 
 function App() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    console.log("Hi there");
+    setDrawerOpen(!drawerOpen);
+  };
+
   const cardsList = photos.map((photo) => {
     return <Card photo={photo} key={photo.id} />;
   });
 
   return (
     <>
-      <Header />
+      <Header toggleFunction={toggleDrawer} />
       <div className="app__body">
-        <Drawer />
+        <Drawer className={`drawer${drawerOpen ? " drawer--open" : ""}`} />
         <div className="app__content">
           <Description />
           <div className="app__cards">{cardsList}</div>

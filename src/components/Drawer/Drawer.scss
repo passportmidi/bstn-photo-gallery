@@ -2,14 +2,18 @@
 @use "../../styles/partials/mixins" as *;
 
 .drawer {
-  background-color: $sage;
-  padding: 16px;
-  @include desktop-tablet {
-    padding: 32px;
-  }
-  @include desktop {
-    height: stretch;
-    width: 100%;
+  display: none;
+  &--open {
+    display: block;
+    background-color: $sage;
+    padding: 16px;
+    @include desktop-tablet {
+      padding: 32px;
+    }
+    @include desktop {
+      height: stretch;
+      width: 100%;
+    }
   }
   &__tags {
     display: flex;
