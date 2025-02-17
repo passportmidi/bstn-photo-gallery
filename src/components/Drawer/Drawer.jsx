@@ -3,7 +3,7 @@ import Tag from "../Tag/Tag";
 import tags from "../../data/tags.json";
 
 export default function Drawer({ className }) {
-  const tagList = tags.map((tag) => <Tag value={tag} key={tag} />);
+  const tagList = tags.map((tag) => <Tag value={tag} key={tag} isClickable />);
   return (
     <div className={className}>
       <p className="drawer__heading body-copy">Filters</p>
