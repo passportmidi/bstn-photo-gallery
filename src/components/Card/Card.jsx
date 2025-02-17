@@ -1,8 +1,13 @@
 import "./Card.scss";
 import Tag from "../Tag/Tag";
+import { useContext } from "react";
+import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
 
 function Card({ photo }) {
-  const tagList = photo.tags.map((tag) => <Tag value={tag} key={tag} />);
+  const selectedTag = useContext(selectedTagContext);
+  const tagList = photo.tags.map((tag) => (
+    <Tag value={tag} key={tag} selectedTag={selectedTag} />
+  ));
   return (
     <div className="card">
       <div className="card__content">
