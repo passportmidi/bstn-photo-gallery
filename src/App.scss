@@ -2,19 +2,22 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/typography" as *;
 
-body {
-  color: $black;
-  background-color: $pistachio;
-  margin: 0 16px;
-  @include desktop-tablet {
-    margin: 0 32px;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  color: $black;
+  background-color: $pistachio;
+
+  & > * {
+    padding: 0 16px;
+    @include desktop-tablet {
+      padding: 0 32px;
+    }
+  }
 }
 
 a {
