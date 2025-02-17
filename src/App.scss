@@ -21,3 +21,16 @@ a {
 ul {
   list-style: none;
 }
+
+.app {
+  &__cards {
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    @include desktop-tablet {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-gap: 16px;
+    }
+  }
+}

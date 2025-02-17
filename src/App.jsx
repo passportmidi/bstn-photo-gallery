@@ -14,8 +14,10 @@ function App() {
   return (
     <>
       <Header />
-      <Description />
-      {cardsList}
+      <div className="app__content">
+        <Description />
+        <div className="app__cards">{cardsList}</div>
+      </div>
       <Footer />
     </>
   );

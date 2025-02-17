@@ -2,7 +2,6 @@
 @use "../../styles/partials/mixins" as *;
 
 .card {
-  margin: 16px;
   border-radius: 8px;
   border: 1px solid $seagreen;
   background-color: $sage;
@@ -30,6 +29,7 @@
   &__tags {
     border-top: 1px solid $seagreen;
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
   }
 }
