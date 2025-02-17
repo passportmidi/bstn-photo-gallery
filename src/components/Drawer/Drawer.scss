@@ -1,0 +1,27 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.drawer {
+  background-color: $sage;
+  padding: 16px;
+  @include desktop-tablet {
+    padding: 32px;
+  }
+  @include desktop {
+    height: stretch;
+    width: 100%;
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+    @include tablet {
+      padding-top: 24px;
+      padding-bottom: 48px;
+    }
+    @include desktop {
+      padding-top: 48px;
+    }
+  }
+}

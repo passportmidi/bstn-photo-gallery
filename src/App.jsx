@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header/Header";
+import Drawer from "./components/Drawer/Drawer";
 import Description from "./components/Description/Description";
 import Card from "./components/Card/Card";
 import Footer from "./components/Footer/Footer";
@@ -14,10 +15,14 @@ function App() {
   return (
     <>
       <Header />
-      <div className="app__content">
-        <Description />
-        <div className="app__cards">{cardsList}</div>
+      <div className="app__body">
+        <Drawer />
+        <div className="app__content">
+          <Description />
+          <div className="app__cards">{cardsList}</div>
+        </div>
       </div>
+
       <Footer />
     </>
   );

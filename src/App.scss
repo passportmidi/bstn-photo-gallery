@@ -11,13 +11,6 @@
 body {
   color: $black;
   background-color: $pistachio;
-
-  & > * {
-    padding: 0 16px;
-    @include desktop-tablet {
-      padding: 0 32px;
-    }
-  }
 }
 
 a {
@@ -30,6 +23,18 @@ ul {
 }
 
 .app {
+  &__body {
+    @include desktop {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+  &__content {
+    padding: 0 16px;
+    @include desktop-tablet {
+      padding: 0 32px;
+    }
+  }
   &__cards {
     display: flex;
     flex-direction: column;

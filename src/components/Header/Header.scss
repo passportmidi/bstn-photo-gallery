@@ -4,7 +4,10 @@
 .header {
   @include display(flex, space-between, center, row);
   background-color: $pistachio;
-  padding: 24px 0;
+  padding: 24px 16px;
+  @include desktop-tablet {
+    padding: 24px 32px;
+  }
   &__cta {
     @include display(flex, center, center, row);
     gap: 8px;
