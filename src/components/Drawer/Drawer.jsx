@@ -15,10 +15,8 @@ export default function Drawer({ className }) {
       onClick={() => {
         if (selectedTag === tag) {
           setSelectedTag(null);
-          console.log("selected!");
         } else {
           setSelectedTag(tag);
-          console.log("deselected!");
         }
       }}
       selectedTag={selectedTag}

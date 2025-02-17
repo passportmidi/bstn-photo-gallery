@@ -16,15 +16,11 @@ function App() {
     setDrawerOpen(!drawerOpen);
   };
 
-  // const toggleTag = ({ tag }) => {
-  //   if (selectedTag === tag) {
-  //     setSelectedTag(null);
-  //   } else {
-  //     setSelectedTag(tag);
-  //   }
-  // };
+  const filteredPhotos = selectedTag
+    ? photos.filter((photo) => photo.tags.includes(selectedTag))
+    : photos;
 
-  const cardsList = photos.map((photo) => {
+  const cardsList = filteredPhotos.map((photo) => {
     return <Card photo={photo} key={photo.id} />;
   });
 
