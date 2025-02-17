@@ -11,10 +11,14 @@
     padding: 8px 12px;
     border-radius: 12px;
   }
+  &--selected {
+    background-color: $seagreen;
+  }
   &--clickable {
     border-color: $forestgreen;
     color: $forestgreen;
-    &:hover {
+    &:hover,
+    &.tag--selected {
       background-color: $forestgreen;
       color: white;
     }
