@@ -6,14 +6,23 @@ import Card from "./components/Card/Card";
 import Footer from "./components/Footer/Footer";
 import photos from "./data/photos.json";
 import "./App.scss";
+import { selectedTagContext, setSelectedTagContext } from "./TagContext";
 
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedTag, setSelectedTag] = useState(null);
 
   const toggleDrawer = () => {
-    console.log("Hi there");
     setDrawerOpen(!drawerOpen);
   };
+
+  // const toggleTag = ({ tag }) => {
+  //   if (selectedTag === tag) {
+  //     setSelectedTag(null);
+  //   } else {
+  //     setSelectedTag(tag);
+  //   }
+  // };
 
   const cardsList = photos.map((photo) => {
     return <Card photo={photo} key={photo.id} />;
@@ -22,14 +31,17 @@ function App() {
   return (
     <>
       <Header toggleFunction={toggleDrawer} />
-      <div className="app__body">
-        <Drawer className={`drawer${drawerOpen ? " drawer--open" : ""}`} />
-        <div className="app__content">
-          <Description />
-          <div className="app__cards">{cardsList}</div>
-        </div>
-      </div>
-
+      <selectedTagContext.Provider value={selectedTag}>
+        <setSelectedTagContext.Provider value={setSelectedTag}>
+          <div className="app__body">
+            <Drawer className={`drawer${drawerOpen ? " drawer--open" : ""}`} />
+            <div className="app__content">
+              <Description />
+              <div className="app__cards">{cardsList}</div>
+            </div>
+          </div>
+        </setSelectedTagContext.Provider>
+      </selectedTagContext.Provider>
       <Footer />
     </>
   );
