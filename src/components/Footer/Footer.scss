@@ -35,4 +35,36 @@
       width: 300px;
     }
   }
+  // responsive positioning of footer elements
+  @include desktop-tablet {
+    &__nav-area {
+      display: flex;
+      gap: 128px;
+    }
+    &__main-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
+  }
+  @include tablet {
+    &__main-text {
+      padding-bottom: 128px;
+    }
+  }
+  @include desktop {
+    &__main-area {
+      padding-bottom: 128px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 128px;
+    }
+    &__main-text {
+      width: 100%;
+    }
+    &__icon-area {
+      padding: 0;
+    }
+  }
 }

@@ -7,49 +7,55 @@ import pinterestIcon from "../../assets/images/Pinterest.svg";
 export default function Footer() {
   return (
     <footer className="footer">
-      <h2 className="wordmark footer__wordmark">Snaps</h2>
+      <div className="footer__main-area">
+        <div className="footer__main-text">
+          <h2 className="wordmark footer__wordmark">Snaps</h2>
 
-      <ul className="footer__nav footer__nav--first">
-        <li className="footer__nav-element">
-          <a className="footer__nav-link body-copy" href="/">
-            For photographers
-          </a>
-        </li>
-        <li className="footer__nav-element">
-          <a className="footer__nav-link body-copy" href="/">
-            Hire talent
-          </a>
-        </li>
-        <li className="footer__nav-element">
-          <a className="footer__nav-link body-copy" href="/">
-            Inspiration
-          </a>
-        </li>
-      </ul>
+          <div className="footer__nav-area">
+            <ul className="footer__nav footer__nav--first">
+              <li className="footer__nav-element">
+                <a className="footer__nav-link body-copy" href="/">
+                  For photographers
+                </a>
+              </li>
+              <li className="footer__nav-element">
+                <a className="footer__nav-link body-copy" href="/">
+                  Hire talent
+                </a>
+              </li>
+              <li className="footer__nav-element">
+                <a className="footer__nav-link body-copy" href="/">
+                  Inspiration
+                </a>
+              </li>
+            </ul>
 
-      <ul className="footer__nav footer__nav--second">
-        <li className="footer__nav-element">
-          <a className="footer__nav-link body-copy" href="/">
-            About
-          </a>
-        </li>
-        <li className="footer__nav-element">
-          <a className="footer__nav-link body-copy" href="/">
-            Careers
-          </a>
-        </li>
-        <li className="footer__nav-element">
-          <a className="footer__nav-link body-copy" href="/">
-            Support
-          </a>
-        </li>
-      </ul>
+            <ul className="footer__nav footer__nav--second">
+              <li className="footer__nav-element">
+                <a className="footer__nav-link body-copy" href="/">
+                  About
+                </a>
+              </li>
+              <li className="footer__nav-element">
+                <a className="footer__nav-link body-copy" href="/">
+                  Careers
+                </a>
+              </li>
+              <li className="footer__nav-element">
+                <a className="footer__nav-link body-copy" href="/">
+                  Support
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      <div className="footer__icon-area">
-        <img src={facebookIcon}></img>
-        <img src={xIcon}></img>
-        <img src={instagramIcon}></img>
-        <img src={pinterestIcon}></img>
+        <div className="footer__icon-area">
+          <img src={facebookIcon}></img>
+          <img src={xIcon}></img>
+          <img src={instagramIcon}></img>
+          <img src={pinterestIcon}></img>
+        </div>
       </div>
 
       <div className="footer__bottom">
