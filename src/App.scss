@@ -21,28 +21,3 @@ a {
 ul {
   list-style: none;
 }
-
-.app {
-  &__body {
-    @include desktop {
-      display: flex;
-      flex-direction: row-reverse;
-    }
-  }
-  &__content {
-    padding: 0 16px;
-    @include desktop-tablet {
-      padding: 0 32px;
-    }
-  }
-  &__cards {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    @include desktop-tablet {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      grid-gap: 32px;
-    }
-  }
-}
