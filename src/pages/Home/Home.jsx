@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { selectedTagContext, setSelectedTagContext } from "../TagContext";
-import Header from "../components/Header/Header";
-import Drawer from "../components/Drawer/Drawer";
-import Description from "../components/Description/Description";
-import Card from "../components/Card/Card";
-import Footer from "../components/Footer/Footer";
-import photos from "../data/photos.json";
+import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
+import Header from "../../components/Header/Header";
+import Drawer from "../../components/Drawer/Drawer";
+import Description from "../../components/Description/Description";
+import Card from "../../components/Card/Card";
+import Footer from "../../components/Footer/Footer";
+import photos from "../../data/photos.json";
 import "./Home.scss";
 
 function Home() {
