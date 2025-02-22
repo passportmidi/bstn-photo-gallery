@@ -6,7 +6,7 @@ import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
 import "./Photo.scss";
 
-function Photo() {
+export default function Photo() {
   const { photoId } = useParams();
   const [photo, setPhoto] = useState(null);
   const API_KEY = "8e3792a3-b23c-4f9d-97c2-c1e35ad2df23";
@@ -28,12 +28,10 @@ function Photo() {
   return (
     <>
       <Header />
-      <div className="photo__content">
+      <div className="photo__content" isHomePage={false}>
         <Card photo={photo} isHomePage={false} />
       </div>
       <Footer />
     </>
   );
 }
-
-export default Photo;

@@ -31,7 +31,7 @@ function Home() {
 
   return (
     <>
-      <Header toggleFunction={toggleDrawer} />
+      <Header toggleFunction={toggleDrawer} isHomePage={true} />
       <selectedTagContext.Provider value={selectedTag}>
         <setSelectedTagContext.Provider value={setSelectedTag}>
           <div className="app__body">
