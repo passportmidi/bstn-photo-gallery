@@ -1,5 +1,6 @@
 import "./Card.scss";
 import Tag from "../Tag/Tag";
+import Like from "../Like/Like";
 import { useContext } from "react";
 import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
 
@@ -35,11 +36,13 @@ function Card({ photo, isHomePage }) {
       <div className="card__tags">{tagList}</div>
       {isHomePage && (
         <div className="card__footer">
-          <div className="card__footer-likes label">{photo.likes} likes</div>
+          <div className="card__footer-likes label">
+            <Like /> {photo.likes} likes
+          </div>
           <div className="card__footer-date label">
             {timestampToDate(photo.timestamp)}
           </div>
-          <div className="card__footer-photographer label">
+          <div className="card__footer-photograti pher label">
             Photo by {photo.photographer}
           </div>
         </div>
