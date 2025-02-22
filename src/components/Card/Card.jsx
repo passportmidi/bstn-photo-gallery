@@ -33,20 +33,22 @@ function Card({ photo, isHomePage }) {
           <div className="card__photographer label">{photo.photographer}</div>
         )}
       </div>
-      <div className="card__tags">{tagList}</div>
-      {isHomePage && (
-        <div className="card__footer">
-          <div className="card__footer-likes label">
-            <Like /> {photo.likes} likes
+      <div className="card__info">
+        <div className="card__tags">{tagList}</div>
+        {isHomePage && (
+          <div className="card__footer">
+            <div className="card__footer-likes label">
+              <Like /> {photo.likes} likes
+            </div>
+            <div className="card__footer-date label">
+              {timestampToDate(photo.timestamp)}
+            </div>
+            <div className="card__footer-photographer label">
+              Photo by {photo.photographer}
+            </div>
           </div>
-          <div className="card__footer-date label">
-            {timestampToDate(photo.timestamp)}
-          </div>
-          <div className="card__footer-photograti pher label">
-            Photo by {photo.photographer}
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
