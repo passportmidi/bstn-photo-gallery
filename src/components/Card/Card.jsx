@@ -40,11 +40,11 @@ function Card({ photo, isHomePage }) {
             <div className="card__footer-likes label">
               <Like /> {photo.likes} likes
             </div>
-            <div className="card__footer-date label">
-              {timestampToDate(photo.timestamp)}
-            </div>
             <div className="card__footer-photographer label">
               Photo by {photo.photographer}
+            </div>
+            <div className="card__footer-date label">
+              {timestampToDate(photo.timestamp)}
             </div>
           </div>
         )}

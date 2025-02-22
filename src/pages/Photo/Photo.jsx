@@ -24,10 +24,13 @@ function Photo() {
   while (!photo) {
     return <div>loading...</div>;
   }
+
   return (
     <>
       <Header />
-      <Card photo={photo} isHomePage={false} />
+      <div className="photo__content">
+        <Card photo={photo} isHomePage={false} />
+      </div>
       <Footer />
     </>
   );
