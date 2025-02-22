@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
+import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Drawer from "../../components/Drawer/Drawer";
 import Description from "../../components/Description/Description";
@@ -21,7 +22,11 @@ function Home() {
     : photos;
 
   const cardsList = filteredPhotos.map((photo) => {
-    return <Card photo={photo} key={photo.id} />;
+    return (
+      <Link to={`/photo/${photo.id}`} key={photo.id}>
+        <Card photo={photo} />
+      </Link>
+    );
   });
 
   return (
