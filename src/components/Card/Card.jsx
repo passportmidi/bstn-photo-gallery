@@ -35,7 +35,7 @@ function Card({ photo, isHomePage }) {
       </div>
       <div className="card__info">
         <div className="card__tags">{tagList}</div>
-        {isHomePage && (
+        {!isHomePage && (
           <div className="card__footer">
             <div className="card__footer-likes label">
               <Like /> {photo.likes} likes

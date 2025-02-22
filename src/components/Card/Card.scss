@@ -33,12 +33,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    padding-bottom: 8px;
   }
   &__footer {
     @include display(flex, space-between, center, row);
     flex-wrap: wrap;
     row-gap: 16px;
+    padding-top: 8px;
     &-likes {
       @include display(flex, center, baseline, row);
       gap: 4px;
@@ -57,10 +57,8 @@
     &__info {
       padding: 16px;
     }
-    &__tags {
-      padding-bottom: 16px;
-    }
     &__footer {
+      padding-top: 16px;
       row-gap: 8px;
     }
   }
