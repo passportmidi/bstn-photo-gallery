@@ -3,8 +3,18 @@ import Tag from "../Tag/Tag";
 import { useContext } from "react";
 import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
 
-function Card({ photo }) {
-  const selectedTag = useContext(selectedTagContext);
+function Card({ photo, isHomePage }) {
+  function timestampToDate(timestamp) {
+    const date = new Date(timestamp);
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    }).format(date);
+    return formattedDate;
+  }
+
+  const selectedTag = isHomePage ? useContext(selectedTagContext) : null;
 
   const tagList = photo.tags.map((tag) => (
     <Tag value={tag} key={tag} selectedTag={selectedTag} />
@@ -18,9 +28,22 @@ function Card({ photo }) {
           src={photo.photo}
           alt={photo.photoDescription}
         />
-        <div className="card__photographer label">{photo.photographer}</div>
+        {isHomePage && (
+          <div className="card__photographer label">{photo.photographer}</div>
+        )}
       </div>
       <div className="card__tags">{tagList}</div>
+      {isHomePage && (
+        <div className="card__footer">
+          <div className="card__footer-likes label">{photo.likes} likes</div>
+          <div className="card__footer-date label">
+            {timestampToDate(photo.timestamp)}
+          </div>
+          <div className="card__footer-photographer label">
+            Photo by {photo.photographer}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
