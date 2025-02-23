@@ -46,8 +46,14 @@ export default function Photo() {
       <Header />
       <div className="photo__content">
         <Card photo={photo} isHomePage={false} />
+        <div className="photo__comments">
+          <div className="photo__comments-label body-copy">
+            {commentList.length}{" "}
+            {commentList.length === 1 ? "Comment" : "Comments"}
+          </div>
+          {commentList}
+        </div>
       </div>
-      <div className="photo__comments">{commentList}</div>
       <Footer />
     </>
   );

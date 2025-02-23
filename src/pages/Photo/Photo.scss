@@ -2,12 +2,20 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 
-.photo__content {
-  padding: 0 16px;
-  @include tablet {
-    padding: 0 32px;
+.photo {
+  &__content {
+    padding: 0 16px;
+    @include tablet {
+      padding: 0 32px;
+    }
+    @include desktop {
+      padding: 0 315px;
+    }
   }
-  @include desktop {
-    padding: 0 315px;
+  &__comments-label {
+    padding: 8px 0;
+    @include desktop-tablet {
+      padding: 16px 0;
+    }
   }
 }

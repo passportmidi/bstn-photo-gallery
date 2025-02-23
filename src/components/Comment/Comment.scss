@@ -1,0 +1,25 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.comment {
+  &__body {
+    border-top: 1px solid $seagreen;
+  }
+  &__header {
+    @include display(flex, space-between, baseline, row);
+    padding: 8px 0;
+    @include desktop-tablet {
+      padding: 16px 0;
+    }
+  }
+  &__user,
+  &__date {
+    color: $forestgreen;
+  }
+  &__content {
+    padding-bottom: 8px;
+    @include desktop-tablet {
+      padding-bottom: 16px;
+    }
+  }
+}
