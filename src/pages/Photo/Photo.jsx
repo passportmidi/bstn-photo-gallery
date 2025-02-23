@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
+import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import Comment from "../../components/Comment/Comment";
 import "./Photo.scss";
@@ -46,6 +47,7 @@ export default function Photo() {
       <Header />
       <div className="photo__content">
         <Card photo={photo} isHomePage={false} />
+        <Form />
         <div className="photo__comments">
           <div className="photo__comments-label body-copy">
             {commentList.length}{" "}
