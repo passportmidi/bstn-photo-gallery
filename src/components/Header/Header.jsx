@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.scss";
 import Filter from "../Filter/Filter";
+import Arrow from "../Arrow/Arrow";
 
 export default function Header({ toggleFunction, isHomePage }) {
   const [hover, setHover] = useState(false);
@@ -16,7 +18,14 @@ export default function Header({ toggleFunction, isHomePage }) {
         >
           Filters <Filter fill={hover ? "white" : "#49675A"} />
         </button>
-      ) : null}
+      ) : (
+        <Link to="/">
+          <div className="header__link">
+            <Arrow />
+            <p className="header__link-text heading">Home</p>
+          </div>
+        </Link>
+      )}
     </header>
   );
 }

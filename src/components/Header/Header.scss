@@ -25,4 +25,9 @@
       color: white;
     }
   }
+  &__link {
+    color: $forestgreen;
+    @include display(flex, center, center, row);
+    gap: 8px;
+  }
 }
