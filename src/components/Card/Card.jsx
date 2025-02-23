@@ -1,20 +1,11 @@
 import "./Card.scss";
 import Tag from "../Tag/Tag";
 import Like from "../Like/Like";
+import timestampToDate from "../../helperFunctions/timestampToDate";
 import { useContext } from "react";
 import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
 
 function Card({ photo, isHomePage }) {
-  function timestampToDate(timestamp) {
-    const date = new Date(timestamp);
-    const formattedDate = new Intl.DateTimeFormat("en-US", {
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-    }).format(date);
-    return formattedDate;
-  }
-
   const selectedTag = isHomePage ? useContext(selectedTagContext) : null;
 
   const tagList = photo.tags.map((tag) => (
