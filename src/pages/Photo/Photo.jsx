@@ -4,11 +4,13 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
+import Comment from "../../components/Comment/Comment";
 import "./Photo.scss";
 
 export default function Photo() {
   const { photoId } = useParams();
   const [photo, setPhoto] = useState(null);
+  const [comments, setComments] = useState(null);
   const API_KEY = "8e3792a3-b23c-4f9d-97c2-c1e35ad2df23";
 
   useEffect(() => {
@@ -19,18 +21,33 @@ export default function Photo() {
       setPhoto(response.data);
     };
     fetchPhoto();
-  }, [photoId]);
+  }, []);
 
-  while (!photo) {
+  useEffect(() => {
+    const fetchComments = async () => {
+      const response = await axios.get(
+        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`
+      );
+      setComments(response.data);
+    };
+    fetchComments();
+  }, []);
+
+  while (!photo || !comments) {
     return <div>loading...</div>;
   }
+
+  const commentList = comments.map((comment) => {
+    return <Comment comment={comment} key={comment.id} />;
+  });
 
   return (
     <>
       <Header />
-      <div className="photo__content" isHomePage={false}>
+      <div className="photo__content">
         <Card photo={photo} isHomePage={false} />
       </div>
+      <div className="photo__comments">{commentList}</div>
       <Footer />
     </>
   );
