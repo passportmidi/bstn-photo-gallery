@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function Form({ postURL, onSubmitFunc }) {
+export default function Form({ onSubmitFunc }) {
   const [name, setName] = useState(localStorage.name || "");
   const [comment, setComment] = useState(localStorage.comment || "");
 

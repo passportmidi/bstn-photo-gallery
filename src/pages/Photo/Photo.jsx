@@ -66,10 +66,7 @@ export default function Photo() {
       <Header />
       <div className="photo__content">
         <Card photo={photo} isHomePage={false} />
-        <Form
-          postURL={`${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`}
-          onSubmitFunc={postComment}
-        />
+        <Form onSubmitFunc={postComment} />
         <div className="photo__comments">
           <div className="photo__comments-label body-copy">
             {commentList.length}{" "}
