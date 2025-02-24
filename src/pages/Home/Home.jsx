@@ -24,7 +24,7 @@ function Home() {
   const cardsList = filteredPhotos.map((photo) => {
     return (
       <Link to={`/photo/${photo.id}`} key={photo.id}>
-        <Card photo={photo} isHomePage={true} />
+        <Card photo={photo} isHomePage={true} font="label" />
       </Link>
     );
   });

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./Form.scss";
 
 export default function Form({ onSubmitFunc }) {
   const [name, setName] = useState(localStorage.name || "");
@@ -16,27 +17,29 @@ export default function Form({ onSubmitFunc }) {
   };
 
   return (
-    <form onSubmit={onSubmitFunc}>
-      <label className="form__label">
+    <form className="form" onSubmit={onSubmitFunc}>
+      <label className="form__label body-copy">
         Name
         <input
-          className="form__input"
+          className="form__input form__input-name body-copy"
           id="nameInput"
           onChange={handleNameChange}
           value={name}
           type="text"
+          required
         />
       </label>
-      <label className="form__label">
+      <label className="form__label body-copy">
         Comment
         <textarea
-          className="form__input"
+          className="form__input form__input-comment body-copy"
           id="commentInput"
           onChange={handleCommentChange}
           value={comment}
+          required
         />
       </label>
-      <button className="form__button" type="submit">
+      <button className="form__button body-copy" type="submit">
         Submit
       </button>
     </form>

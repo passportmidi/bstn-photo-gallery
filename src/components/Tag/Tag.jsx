@@ -1,11 +1,11 @@
 import "./Tag.scss";
 
-function Tag({ value, isClickable = false, onClick, selectedTag }) {
+function Tag({ value, isClickable = false, onClick, selectedTag, font }) {
   return (
     <button
       className={`tag${isClickable ? " tag--clickable" : ""}${
         selectedTag === value ? " tag--selected" : ""
-      } label`}
+      } ${font}`}
       onClick={onClick}
     >
       {value}

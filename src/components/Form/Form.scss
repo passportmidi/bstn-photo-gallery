@@ -1,0 +1,56 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.form {
+  margin: 32px 0;
+  &__button {
+    display: flex;
+    justify-self: flex-end;
+    padding: 6px 8px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid $forestgreen;
+    background-color: $forestgreen;
+    color: white;
+    @include desktop-tablet {
+      padding: 8px 12px;
+      border-radius: 12px;
+    }
+  }
+  &__input {
+    width: 100%;
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid $seagreen;
+    margin: 8px 0;
+    padding: 8px;
+    &:focus {
+      outline: none;
+      border: 1px solid $forestgreen;
+    }
+    &:invalid {
+      outline: none;
+      border: 1px solid #b10606;
+    }
+    &-name {
+      min-height: 30px;
+      @include desktop-tablet {
+        min-height: 40px;
+      }
+    }
+    &-comment {
+      min-height: 60px;
+      @include desktop-tablet {
+        min-height: 80px;
+      }
+    }
+    @include desktop-tablet {
+      border-radius: 12px;
+      padding: 8px 16px;
+    }
+  }
+}
+
+.form .form__label {
+  @include display(flex, center, start, column);
+}

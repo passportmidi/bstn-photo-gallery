@@ -65,7 +65,7 @@ export default function Photo() {
     <>
       <Header />
       <div className="photo__content">
-        <Card photo={photo} isHomePage={false} />
+        <Card photo={photo} isHomePage={false} font="body-copy" />
         <Form onSubmitFunc={postComment} />
         <div className="photo__comments">
           <div className="photo__comments-label body-copy">
