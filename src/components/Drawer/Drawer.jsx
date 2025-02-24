@@ -20,6 +20,7 @@ export default function Drawer({ className }) {
         }
       }}
       selectedTag={selectedTag}
+      font="label"
     />
   ));
   return (
