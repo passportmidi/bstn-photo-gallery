@@ -35,7 +35,10 @@ export default function Photo() {
     const response = await axios.get(
       `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`
     );
-    setComments(response.data);
+    const sortedComments = response.data.sort((a, b) => {
+      return b.timestamp - a.timestamp;
+    });
+    setComments(sortedComments);
   }
 
   async function postComment(e) {

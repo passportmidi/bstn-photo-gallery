@@ -45,35 +45,3 @@ export default function Form({ onSubmitFunc }) {
     </form>
   );
 }
-
-{
-  /* <form id="commentForm" class="form">
-<div class="form__section">
-  <label for="nameInput" class="label form__label">
-    {" "}
-    Name
-  </label>
-  <input
-    type="text"
-    id="nameInput"
-    class="form__input form__input-name"
-    name="nameInput"
-    placeholder="Enter your name"
-  />
-</div>
-<div class="form__section">
-  <label for="commentInput" class="label form__label">
-    Comment
-  </label>
-  <textarea
-    id="commentInput"
-    class="form__input form__input-comment"
-    name="commentInput"
-    placeholder="Add a new comment"
-  ></textarea>
-</div>
-<button class="button form__button" type="submit">
-  Comment
-</button>
-</form> */
-}
