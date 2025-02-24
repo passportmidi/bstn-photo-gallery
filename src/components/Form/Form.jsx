@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function Form() {
+export default function Form({ postURL, onSubmitFunc }) {
   const [name, setName] = useState(localStorage.name || "");
   const [comment, setComment] = useState(localStorage.comment || "");
 
@@ -15,18 +15,13 @@ export default function Form() {
     localStorage.setItem("comment", e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name);
-    console.log(comment);
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={onSubmitFunc}>
       <label className="form__label">
         Name
         <input
           className="form__input"
+          id="nameInput"
           onChange={handleNameChange}
           value={name}
           type="text"
@@ -36,6 +31,7 @@ export default function Form() {
         Comment
         <textarea
           className="form__input"
+          id="commentInput"
           onChange={handleCommentChange}
           value={comment}
         />

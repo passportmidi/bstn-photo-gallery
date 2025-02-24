@@ -17,24 +17,41 @@ export default function Photo() {
   const API_KEY = "8e3792a3-b23c-4f9d-97c2-c1e35ad2df23";
 
   useEffect(() => {
-    const fetchPhoto = async () => {
-      const response = await axios.get(
-        `${BASE_URL}/photos/${photoId}?api_key=${API_KEY}`
-      );
-      setPhoto(response.data);
-    };
     fetchPhoto();
   }, []);
 
   useEffect(() => {
-    const fetchComments = async () => {
-      const response = await axios.get(
-        `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`
-      );
-      setComments(response.data);
-    };
     fetchComments();
   }, []);
+
+  async function fetchPhoto() {
+    const response = await axios.get(
+      `${BASE_URL}/photos/${photoId}?api_key=${API_KEY}`
+    );
+    setPhoto(response.data);
+  }
+
+  async function fetchComments() {
+    const response = await axios.get(
+      `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`
+    );
+    setComments(response.data);
+  }
+
+  async function postComment(e) {
+    e.preventDefault();
+    const name = e.target.nameInput.value;
+    const comment = e.target.commentInput.value;
+    try {
+      await axios.post(
+        `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`,
+        { name, comment }
+      );
+      fetchComments();
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
   while (!photo || !comments) {
     return <div>loading...</div>;
@@ -49,7 +66,10 @@ export default function Photo() {
       <Header />
       <div className="photo__content">
         <Card photo={photo} isHomePage={false} />
-        <Form />
+        <Form
+          postURL={`${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`}
+          onSubmitFunc={postComment}
+        />
         <div className="photo__comments">
           <div className="photo__comments-label body-copy">
             {commentList.length}{" "}
