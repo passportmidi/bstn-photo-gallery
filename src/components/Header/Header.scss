@@ -4,6 +4,9 @@
 .header {
   @include display(flex, space-between, center, row);
   background-color: $pistachio;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
   padding: 24px 16px;
   @include desktop-tablet {
     padding: 24px 32px;
