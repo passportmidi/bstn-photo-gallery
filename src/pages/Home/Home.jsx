@@ -54,7 +54,13 @@ function Home() {
             <Drawer className={`drawer${drawerOpen ? " drawer--open" : ""}`} />
             <div className="app__content">
               <Description />
-              <div className="app__cards">{cardsList}</div>
+              <div
+                className={`app__cards${
+                  drawerOpen ? " app__cards--narrow" : ""
+                }`}
+              >
+                {cardsList}
+              </div>
             </div>
           </div>
         </setSelectedTagContext.Provider>

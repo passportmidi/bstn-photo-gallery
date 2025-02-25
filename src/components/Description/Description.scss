@@ -1,7 +1,9 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
 .desc {
   background-color: $pistachio;
   padding: 32px 0 48px 0;
+  width: 700px;
   &__body {
     padding-top: 24px;
   }

@@ -21,8 +21,18 @@
     gap: 16px;
     @include desktop-tablet {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       grid-gap: 32px;
+    }
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &--narrow {
+      @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }
