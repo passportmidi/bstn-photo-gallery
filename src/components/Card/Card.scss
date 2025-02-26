@@ -54,7 +54,7 @@
       row-gap: 0.5rem;
     }
     &-likes {
-      @include display(flex, center, baseline, row);
+      @include display(flex, center, center, row);
       gap: 0.25rem;
     }
     &-photographer {

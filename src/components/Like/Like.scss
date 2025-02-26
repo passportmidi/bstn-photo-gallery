@@ -1,0 +1,8 @@
+@use "../../styles/partials/mixins" as *;
+
+svg {
+  height: 10px;
+  @include desktop-tablet {
+    height: 20px;
+  }
+}

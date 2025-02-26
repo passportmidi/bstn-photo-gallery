@@ -1,3 +1,5 @@
+import "./Like.scss";
+
 export default function Like() {
   return (
     <svg
