@@ -22,11 +22,15 @@ function Home() {
   }, [photos]);
 
   async function fetchPhotos() {
-    const response = await axios.get(`${BASE_URL}/photos?api_key=${API_KEY}`);
-    const filteredPhotos = selectedTag
-      ? response.data.filter((photo) => photo.tags.includes(selectedTag))
-      : response.data;
-    setPhotos(filteredPhotos);
+    try {
+      const response = await axios.get(`${BASE_URL}/photos?api_key=${API_KEY}`);
+      const filteredPhotos = selectedTag
+        ? response.data.filter((photo) => photo.tags.includes(selectedTag))
+        : response.data;
+      setPhotos(filteredPhotos);
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   const toggleDrawer = () => {

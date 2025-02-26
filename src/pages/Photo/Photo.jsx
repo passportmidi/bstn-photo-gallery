@@ -25,20 +25,28 @@ export default function Photo() {
   }, []);
 
   async function fetchPhoto() {
-    const response = await axios.get(
-      `${BASE_URL}/photos/${photoId}?api_key=${API_KEY}`
-    );
-    setPhoto(response.data);
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/photos/${photoId}?api_key=${API_KEY}`
+      );
+      setPhoto(response.data);
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   async function fetchComments() {
-    const response = await axios.get(
-      `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`
-    );
-    const sortedComments = response.data.sort((a, b) => {
-      return b.timestamp - a.timestamp;
-    });
-    setComments(sortedComments);
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`
+      );
+      const sortedComments = response.data.sort((a, b) => {
+        return b.timestamp - a.timestamp;
+      });
+      setComments(sortedComments);
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   async function postComment(e) {

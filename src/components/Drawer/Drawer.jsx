@@ -16,8 +16,13 @@ export default function Drawer({ className }) {
   }, []);
 
   async function fetchTags() {
-    const response = await axios.get(`${BASE_URL}/tags?api_key=${API_KEY}`);
-    setTags(response.data);
+    try {
+      const response = await axios.get(`${BASE_URL}/tags?api_key=${API_KEY}`);
+      setTags(response.data);
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
   if (!tags) {
