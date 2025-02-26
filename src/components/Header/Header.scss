@@ -5,23 +5,23 @@
   @include display(flex, space-between, center, row);
   background-color: $pistachio;
   position: sticky;
-  top: 0px;
+  top: 0rem;
   z-index: 1;
-  padding: 24px 16px;
+  padding: 1.5rem 1rem;
   @include desktop-tablet {
-    padding: 24px 32px;
+    padding: 1.5rem 2rem;
   }
   &__cta {
     @include display(flex, center, center, row);
-    gap: 8px;
-    padding: 8px 16px;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
     color: $forestgreen;
     background-color: $pistachio;
-    border: 2px solid $forestgreen;
-    border-radius: 17.5px;
+    border: 0.125rem solid $forestgreen;
+    border-radius: 1.0938rem;
     @include desktop-tablet {
-      padding: 11px 22px;
-      border-radius: 21.75px;
+      padding: 0.6875rem 1.375rem;
+      border-radius: 1.3594rem;
     }
     &--hover {
       background-color: $forestgreen;
@@ -31,6 +31,6 @@
   &__link {
     color: $forestgreen;
     @include display(flex, center, center, row);
-    gap: 8px;
+    gap: 0.5rem;
   }
 }

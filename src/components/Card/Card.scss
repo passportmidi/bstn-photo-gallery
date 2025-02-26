@@ -2,11 +2,11 @@
 @use "../../styles/partials/mixins" as *;
 
 .card {
-  border-radius: 8px;
-  border: 1px solid $seagreen;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid $seagreen;
   background-color: $sage;
   @include desktop-tablet {
-    border-radius: 12px;
+    border-radius: 0.75rem;
   }
   &__content {
     position: relative;
@@ -15,47 +15,47 @@
   &__image {
     object-fit: contain;
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
     @include desktop-tablet {
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
     }
   }
   &__photographer {
     position: absolute;
     background-color: $sage;
-    border-top-left-radius: 8px;
+    border-top-left-radius: 0.5rem;
     right: 0;
     bottom: 0;
   }
   &__photographer,
   &__info {
-    padding: 8px;
+    padding: 0.5rem;
     @include desktop-tablet {
-      padding: 16px;
+      padding: 1rem;
     }
   }
   &__info {
-    border-top: 1px solid $seagreen;
+    border-top: 0.0625rem solid $seagreen;
   }
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0.5rem;
   }
   &__footer {
     @include display(flex, space-between, center, row);
     flex-wrap: wrap;
-    row-gap: 16px;
-    padding-top: 8px;
+    row-gap: 1rem;
+    padding-top: 0.5rem;
     @include desktop-tablet {
-      padding-top: 16px;
-      row-gap: 8px;
+      padding-top: 1rem;
+      row-gap: 0.5rem;
     }
     &-likes {
       @include display(flex, center, baseline, row);
-      gap: 4px;
+      gap: 0.25rem;
     }
     &-photographer {
       order: 1;

@@ -10,18 +10,18 @@
     }
   }
   &__content {
-    padding: 0 16px;
+    padding: 0 1rem;
     @include desktop-tablet {
-      padding: 0 32px;
+      padding: 0 2rem;
     }
   }
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
     @include desktop-tablet {
       display: grid;
-      grid-gap: 32px;
+      grid-gap: 2rem;
     }
     @include tablet {
       grid-template-columns: repeat(2, 1fr);

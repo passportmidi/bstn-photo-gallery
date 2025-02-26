@@ -3,26 +3,26 @@
 
 .footer {
   background-color: $pistachio;
-  padding: 48px 16px 16px 16px;
+  padding: 3rem 1rem 1rem 1rem;
   @include desktop-tablet {
-    padding: 48px 32px 16px 32px;
+    padding: 3rem 2rem 1rem 2rem;
   }
   &__main-area {
     @include desktop {
-      padding-bottom: 128px;
+      padding-bottom: 8rem;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 128px;
+      gap: 8rem;
     }
   }
   &__wordmark {
-    padding-bottom: 40px;
+    padding-bottom: 2.5rem;
   }
   &__nav {
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
     &-element {
-      padding: 2px 0;
+      padding: 0.125rem 0;
     }
     &--bottom {
       @include display(flex, space-between, baseline, row);
@@ -34,23 +34,23 @@
   }
   &__icon-area {
     @include display(flex, space-between, center, row);
-    width: 150px;
-    padding: 16px 0;
+    width: 9.375rem;
+    padding: 1rem 0;
     @include desktop {
       padding: 0;
     }
   }
   &__bottom {
     @include display(flex, start, center, row);
-    width: 235px;
+    width: 14.6875rem;
     @include desktop-tablet {
-      width: 300px;
+      width: 18.75rem;
     }
   }
   &__nav-area {
     @include desktop-tablet {
       display: flex;
-      gap: 128px;
+      gap: 8rem;
     }
   }
   &__main-text {
@@ -60,7 +60,7 @@
       align-items: start;
     }
     @include tablet {
-      padding-bottom: 128px;
+      padding-bottom: 8rem;
     }
     @include desktop {
       width: 100%;
