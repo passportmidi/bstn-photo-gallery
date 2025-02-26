@@ -56,7 +56,7 @@ export default function Photo() {
     }
   }
 
-  while (!photo || !comments) {
+  if (!photo || !comments) {
     return <div>loading...</div>;
   }
 

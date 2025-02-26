@@ -33,7 +33,7 @@ function Home() {
     setDrawerOpen(!drawerOpen);
   };
 
-  while (!photos) {
+  if (!photos) {
     return <div>loading...</div>;
   }
 

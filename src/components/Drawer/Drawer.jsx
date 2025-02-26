@@ -20,7 +20,7 @@ export default function Drawer({ className }) {
     setTags(response.data);
   }
 
-  while (!tags) {
+  if (!tags) {
     return <div>"loading tags..."</div>;
   }
 
