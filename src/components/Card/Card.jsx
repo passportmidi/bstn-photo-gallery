@@ -3,7 +3,7 @@ import Tag from "../Tag/Tag";
 import Like from "../Like/Like";
 import timestampToDate from "../../helperFunctions/timestampToDate";
 import { useContext } from "react";
-import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
+import { selectedTagContext } from "../../TagContext";
 
 function Card({ photo, isHomePage, font }) {
   const selectedTag = isHomePage ? useContext(selectedTagContext) : null;

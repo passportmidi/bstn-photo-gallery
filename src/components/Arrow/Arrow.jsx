@@ -1,4 +1,4 @@
-export default function Arrow({ className }) {
+export default function Arrow() {
   return (
     <svg
       width="21"
