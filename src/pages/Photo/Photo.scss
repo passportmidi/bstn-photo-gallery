@@ -4,12 +4,12 @@
 
 .photo {
   &__content {
-    padding: 0 1rem;
+    padding: 0 1rem 48px 1rem;
     @include tablet {
-      padding: 0 2rem;
+      padding: 0 2rem 32px 2rem;
     }
     @include desktop {
-      padding: 0 19.6875rem;
+      padding: 0 19.6875rem 32px 19.6875rem;
     }
   }
   &__comments-label {
