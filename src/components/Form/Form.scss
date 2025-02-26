@@ -30,7 +30,7 @@
     }
     &:invalid {
       outline: none;
-      border: 1px solid #b10606;
+      border: 1px solid $error;
     }
     &-name {
       min-height: 30px;

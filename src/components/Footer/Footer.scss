@@ -28,7 +28,7 @@
       @include display(flex, space-between, baseline, row);
       width: 100%;
       & .label {
-        color: #b7cec9;
+        color: $seagreen;
       }
     }
   }
