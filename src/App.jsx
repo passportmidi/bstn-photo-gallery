@@ -9,7 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/photo/:photoId" element={<Photo />} />
-        <Route path="home" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
