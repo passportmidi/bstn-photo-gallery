@@ -7,6 +7,15 @@
   @include desktop-tablet {
     padding: 48px 32px 16px 32px;
   }
+  &__main-area {
+    @include desktop {
+      padding-bottom: 128px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 128px;
+    }
+  }
   &__wordmark {
     padding-bottom: 40px;
   }
@@ -27,6 +36,9 @@
     @include display(flex, space-between, center, row);
     width: 150px;
     padding: 16px 0;
+    @include desktop {
+      padding: 0;
+    }
   }
   &__bottom {
     @include display(flex, start, center, row);
@@ -35,36 +47,23 @@
       width: 300px;
     }
   }
-  // responsive positioning of footer elements
-  @include desktop-tablet {
-    &__nav-area {
+  &__nav-area {
+    @include desktop-tablet {
       display: flex;
       gap: 128px;
     }
-    &__main-text {
+  }
+  &__main-text {
+    @include desktop-tablet {
       display: flex;
       justify-content: space-between;
       align-items: start;
     }
-  }
-  @include tablet {
-    &__main-text {
+    @include tablet {
       padding-bottom: 128px;
     }
-  }
-  @include desktop {
-    &__main-area {
-      padding-bottom: 128px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 128px;
-    }
-    &__main-text {
+    @include desktop {
       width: 100%;
-    }
-    &__icon-area {
-      padding: 0;
     }
   }
 }

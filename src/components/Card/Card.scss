@@ -5,6 +5,9 @@
   border-radius: 8px;
   border: 1px solid $seagreen;
   background-color: $sage;
+  @include desktop-tablet {
+    border-radius: 12px;
+  }
   &__content {
     position: relative;
     display: flex;
@@ -14,6 +17,10 @@
     width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    @include desktop-tablet {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
   }
   &__photographer {
     position: absolute;
@@ -25,6 +32,9 @@
   &__photographer,
   &__info {
     padding: 8px;
+    @include desktop-tablet {
+      padding: 16px;
+    }
   }
   &__info {
     border-top: 1px solid $seagreen;
@@ -39,31 +49,17 @@
     flex-wrap: wrap;
     row-gap: 16px;
     padding-top: 8px;
+    @include desktop-tablet {
+      padding-top: 16px;
+      row-gap: 8px;
+    }
     &-likes {
       @include display(flex, center, baseline, row);
       gap: 4px;
     }
     &-photographer {
       order: 1;
-    }
-  }
-}
-
-@include desktop-tablet {
-  .card {
-    border-radius: 12px;
-    &__image {
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-    }
-    &__photographer,
-    &__info {
-      padding: 16px;
-    }
-    &__footer {
-      padding-top: 16px;
-      row-gap: 8px;
-      &-photographer {
+      @include desktop-tablet {
         order: 0;
       }
     }
