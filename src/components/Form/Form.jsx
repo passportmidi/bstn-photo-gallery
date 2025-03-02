@@ -2,17 +2,25 @@ import { useState } from "react";
 import "./Form.scss";
 
 export default function Form({ onSubmitFunc }) {
-  const [name, setName] = useState(localStorage.name || "");
-  const [comment, setComment] = useState(localStorage.comment || "");
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
-    localStorage.setItem("name", e.target.value);
+    if (!name.trim()) {
+      e.target.setCustomValidity("Name cannot be empty");
+    } else {
+      e.target.setCustomValidity("");
+    }
   };
 
   const handleCommentChange = (e) => {
     setComment(e.target.value);
-    localStorage.setItem("comment", e.target.value);
+    if (!comment.trim()) {
+      e.target.setCustomValidity("Comment cannot be empty");
+    } else {
+      e.target.setCustomValidity("");
+    }
   };
 
   return (
