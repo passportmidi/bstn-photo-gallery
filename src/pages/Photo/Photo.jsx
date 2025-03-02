@@ -13,8 +13,7 @@ export default function Photo() {
   const [photo, setPhoto] = useState(null);
   const [comments, setComments] = useState(null);
 
-  const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-  const API_KEY = "8e3792a3-b23c-4f9d-97c2-c1e35ad2df23";
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetchPhoto();
@@ -26,9 +25,7 @@ export default function Photo() {
 
   async function fetchPhoto() {
     try {
-      const response = await axios.get(
-        `${BASE_URL}/photos/${photoId}?api_key=${API_KEY}`
-      );
+      const response = await axios.get(`${BASE_URL}/photos/${photoId}`);
       setPhoto(response.data);
     } catch (e) {
       console.error(e);
@@ -38,7 +35,7 @@ export default function Photo() {
   async function fetchComments() {
     try {
       const response = await axios.get(
-        `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`
+        `${BASE_URL}/photos/${photoId}/comments`
       );
       const sortedComments = response.data.sort((a, b) => {
         return b.timestamp - a.timestamp;
@@ -54,10 +51,10 @@ export default function Photo() {
     const name = e.target.nameInput.value;
     const comment = e.target.commentInput.value;
     try {
-      await axios.post(
-        `${BASE_URL}/photos/${photoId}/comments?api_key=${API_KEY}`,
-        { name, comment }
-      );
+      await axios.post(`${BASE_URL}/photos/${photoId}/comments`, {
+        name,
+        comment,
+      });
       fetchComments();
     } catch (e) {
       console.error(e);

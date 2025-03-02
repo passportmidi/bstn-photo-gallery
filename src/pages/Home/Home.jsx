@@ -14,8 +14,7 @@ function Home() {
   const [selectedTag, setSelectedTag] = useState(null);
   const [photos, setPhotos] = useState(null);
 
-  const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-  const API_KEY = "8e3792a3-b23c-4f9d-97c2-c1e35ad2df23";
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetchPhotos();
@@ -23,7 +22,7 @@ function Home() {
 
   async function fetchPhotos() {
     try {
-      const response = await axios.get(`${BASE_URL}/photos?api_key=${API_KEY}`);
+      const response = await axios.get(`${BASE_URL}/photos`);
       const filteredPhotos = selectedTag
         ? response.data.filter((photo) => photo.tags.includes(selectedTag))
         : response.data;

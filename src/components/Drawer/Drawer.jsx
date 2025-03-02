@@ -5,8 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { selectedTagContext, setSelectedTagContext } from "../../TagContext";
 
 export default function Drawer({ className }) {
-  const BASE_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-  const API_KEY = "8e3792a3-b23c-4f9d-97c2-c1e35ad2df23";
+  const BASE_URL = import.meta.env.VITE_API_URL;
   const [tags, setTags] = useState(null);
   const selectedTag = useContext(selectedTagContext);
   const setSelectedTag = useContext(setSelectedTagContext);
@@ -17,10 +16,9 @@ export default function Drawer({ className }) {
 
   async function fetchTags() {
     try {
-      const response = await axios.get(`${BASE_URL}/tags?api_key=${API_KEY}`);
+      const response = await axios.get(`${BASE_URL}/tags`);
       setTags(response.data);
-    }
-    catch (e) {
+    } catch (e) {
       console.error(e);
     }
   }
