@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./Form.scss";
+import axios from "axios";
 
-export default function Form({ onSubmitFunc }) {
+export default function Form({ photoId, fetchComments }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
+
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -23,8 +26,28 @@ export default function Form({ onSubmitFunc }) {
     }
   };
 
+  const postComment = async (e) => {
+    e.preventDefault();
+    const name = e.target.nameInput.value;
+    const comment = e.target.commentInput.value;
+    try {
+      await axios.post(`${BASE_URL}/photos/${photoId}/comments`, {
+        name,
+        comment,
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <form className="form" onSubmit={onSubmitFunc}>
+    <form
+      className="form"
+      onSubmit={(e) => {
+        postComment(e);
+        fetchComments();
+      }}
+    >
       <label className="form__label body-copy">
         Name
         <input

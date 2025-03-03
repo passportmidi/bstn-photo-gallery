@@ -46,21 +46,6 @@ export default function Photo() {
     }
   }
 
-  async function postComment(e) {
-    e.preventDefault();
-    const name = e.target.nameInput.value;
-    const comment = e.target.commentInput.value;
-    try {
-      await axios.post(`${BASE_URL}/photos/${photoId}/comments`, {
-        name,
-        comment,
-      });
-      fetchComments();
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
   if (!photo || !comments) {
     return <div>loading...</div>;
   }
@@ -74,7 +59,7 @@ export default function Photo() {
       <Header />
       <div className="photo__content">
         <Card photo={photo} isHomePage={false} font="body-copy" />
-        <Form onSubmitFunc={postComment} />
+        <Form photoId={photoId} fetchComments={fetchComments} />
         <div className="photo__comments">
           <div className="photo__comments-label body-copy">
             {commentList.length}{" "}
