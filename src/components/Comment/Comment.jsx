@@ -7,6 +7,7 @@ export default function Comment({ comment }) {
       <div className="comment__header">
         <p className="comment__user label">{comment.name}</p>
         <p className="comment__date label">
+          {/* convert timestamp to date before displaying */}
           {timestampToDate(comment.timestamp)}
         </p>
       </div>

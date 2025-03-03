@@ -13,8 +13,10 @@ export default function Photo() {
   const [photo, setPhoto] = useState(null);
   const [comments, setComments] = useState(null);
 
+  // API base URL
   const BASE_URL = import.meta.env.VITE_API_URL;
 
+  // run on page load
   useEffect(() => {
     fetchPhoto();
   }, []);
@@ -37,6 +39,7 @@ export default function Photo() {
       const response = await axios.get(
         `${BASE_URL}/photos/${photoId}/comments`
       );
+      // sort comments by timestamp from newest to oldest
       const sortedComments = response.data.sort((a, b) => {
         return b.timestamp - a.timestamp;
       });
@@ -50,6 +53,7 @@ export default function Photo() {
     return <div>loading...</div>;
   }
 
+  // create list of comments
   const commentList = comments.map((comment) => {
     return <Comment comment={comment} key={comment.id} />;
   });
@@ -62,6 +66,7 @@ export default function Photo() {
         <Form photoId={photoId} fetchComments={fetchComments} />
         <div className="photo__comments">
           <div className="photo__comments-label body-copy">
+            {/* header displaying number of comments */}
             {commentList.length}{" "}
             {commentList.length === 1 ? "Comment" : "Comments"}
           </div>

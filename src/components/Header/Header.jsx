@@ -8,7 +8,11 @@ export default function Header({ toggleFunction, isHomePage }) {
   const [hover, setHover] = useState(false);
   return (
     <header className="header">
-      <Link to="/"><h2 className="wordmark header__wordmark">Snaps</h2></Link>
+      {/* link to homepage */}
+      <Link to="/">
+        <h2 className="wordmark header__wordmark">Snaps</h2>
+      </Link>
+      {/* display if header is on home page */}
       {isHomePage ? (
         <button
           className={`header__cta${hover ? " header__cta--hover" : ""} label`}

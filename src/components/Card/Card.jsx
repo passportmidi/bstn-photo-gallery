@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { selectedTagContext } from "../../TagContext";
 
 function Card({ photo, isHomePage, font }) {
+  // use selected tag context to read if a tag is selected
   const selectedTag = isHomePage ? useContext(selectedTagContext) : null;
 
   const tagList = photo.tags.map((tag) => (
@@ -20,6 +21,7 @@ function Card({ photo, isHomePage, font }) {
           src={photo.photo}
           alt={photo.photoDescription}
         />
+        {/* include certain fields if card is displayed on home page */}
         {isHomePage && (
           <div className={`card__photographer ${font}`}>
             {photo.photographer}
@@ -28,6 +30,7 @@ function Card({ photo, isHomePage, font }) {
       </div>
       <div className="card__info">
         <div className="card__tags">{tagList}</div>
+        {/* include certain fields if card is displayed on photo page */}
         {!isHomePage && (
           <div className="card__footer">
             <div className={`card__footer-likes ${font}`}>

@@ -14,8 +14,10 @@ function Home() {
   const [selectedTag, setSelectedTag] = useState(null);
   const [photos, setPhotos] = useState(null);
 
+  // API base URL
   const BASE_URL = import.meta.env.VITE_API_URL;
 
+  // update when photos change
   useEffect(() => {
     fetchPhotos();
   }, [photos]);
@@ -32,6 +34,7 @@ function Home() {
     }
   }
 
+  // open and close drawer
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
@@ -40,6 +43,7 @@ function Home() {
     return <div>loading...</div>;
   }
 
+  // create list of photo cards wrapped in links to photo pages
   const cardsList = photos.map((photo) => {
     return (
       <Link to={`/photo/${photo.id}`} key={photo.id}>
@@ -51,12 +55,14 @@ function Home() {
   return (
     <>
       <Header toggleFunction={toggleDrawer} isHomePage={true} />
+      {/* add context to pass selected tag info to child components */}
       <selectedTagContext.Provider value={selectedTag}>
         <setSelectedTagContext.Provider value={setSelectedTag}>
           <div className="app__body">
             <Drawer className={`drawer${drawerOpen ? " drawer--open" : ""}`} />
             <div className="app__content">
               <Description />
+              {/* shrink width of photo cards if drawer is open */}
               <div
                 className={`app__cards${
                   drawerOpen ? " app__cards--narrow" : ""

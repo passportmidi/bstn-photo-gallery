@@ -10,6 +10,7 @@ export default function Form({ photoId, fetchComments }) {
 
   const handleNameChange = (e) => {
     setName(e.target.value);
+    // catches if name is whitespace
     if (!name.trim()) {
       e.target.setCustomValidity("Name cannot be empty");
     } else {
@@ -19,6 +20,7 @@ export default function Form({ photoId, fetchComments }) {
 
   const handleCommentChange = (e) => {
     setComment(e.target.value);
+    // catches if comment is whitespace
     if (!comment.trim()) {
       e.target.setCustomValidity("Comment cannot be empty");
     } else {
