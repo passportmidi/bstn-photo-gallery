@@ -1,1 +1,1 @@
-Snaps project for BrainStation
+Photo gallery project for BrainStation
